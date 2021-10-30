@@ -1,4 +1,4 @@
-// Hook up submit action to form
+// !! Hook up submit action to form !!
 const sizePicker = document.getElementById("sizePicker");
 sizePicker.onsubmit = () => {
 	// construct the pixel canvas
@@ -22,7 +22,7 @@ function makeGrid() {
 	const table = document.getElementById("pixelCanvas");
 
 	// clear the contents of the pixel canvas to construct a new one
-	table.innerHTML = "";
+	clearCanvas(table);
 
 	// create a row to contain each row of pixels
 	for (let y = 0; y < gridHeight; y++) {
@@ -44,6 +44,15 @@ function makeGrid() {
 			row.appendChild(cell);
 		}
 	}
+}
+
+/**
+ * Clears the contents of the canvas
+ * @param {HTMLElement} table The table to clear the contents of
+ */
+function clearCanvas(table) {
+	// clear the contents of the table
+	table.innerHTML = "";
 }
 
 /**
